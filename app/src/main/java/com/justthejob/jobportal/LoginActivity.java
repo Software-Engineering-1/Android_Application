@@ -43,6 +43,9 @@ public class LoginActivity extends ActionBarActivity {
     private String LOGIN_SUCCESS_INCOMPLETE = "CHAT";
     private String LOGIN_UNSUCCESSFUL = "Invalid Credentials";
 
+    public static String USER_NAME = "";
+    public static String USER_PASS = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,6 +119,8 @@ public class LoginActivity extends ActionBarActivity {
                         startActivity(mainIntent);
                     }
                     else if (result.toLowerCase().contains("CHAT".toLowerCase())){
+                        USER_NAME = et_username.getText().toString();
+                        USER_PASS = et_password.getText().toString();
                         Intent profileIntent = new Intent(LoginActivity.this, ProfileActivity.class);
                         startActivity(profileIntent);
                     }

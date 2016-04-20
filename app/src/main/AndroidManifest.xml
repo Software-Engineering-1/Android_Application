@@ -32,7 +32,8 @@
             android:label="@string/title_activity_register"
             android:parentActivityName=".MainActivity" >
         </activity>
-        <activity android:name=".ProfileActivity" >
+        <activity android:name=".ProfileActivity"
+            android:label="Edit Profile Information">
         </activity>
         <activity
             android:name=".MainPage"
