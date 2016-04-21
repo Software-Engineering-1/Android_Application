@@ -128,7 +128,7 @@ public class ProfileActivity extends ActionBarActivity {
                         System.out.println("Exception of the type : " + e.toString());
                     }*/
 
-                    if(result.toLowerCase().equals("Successfully updated details".toLowerCase())){
+                    if(result.toLowerCase().contains("updated".toLowerCase())){
                         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(ProfileActivity.this);
                         dialogBuilder.setTitle("Profile Information Updated Successfully");
                         dialogBuilder.setMessage("You will be redirected to the Main Page");
@@ -142,12 +142,15 @@ public class ProfileActivity extends ActionBarActivity {
                         AlertDialog dialog = dialogBuilder.create();
                         dialog.show();
                     }
-                    else if(result.toLowerCase().equals("Already filled in the details".toLowerCase())){
+                    else if(result.toLowerCase().contains("filled".toLowerCase())){
                         System.out.println("Details have already been filled in");
                     }
-                    else if(result.toLowerCase().contains("Missing parameters".toLowerCase())){
-                        // error of unknown type
+                    else if(result.toLowerCase().contains("Missing".toLowerCase())){
                         System.out.println("Some parameters are missing");
+                    }
+                    else{
+                        // Error of unknown type
+                        System.out.println("Error of the unknown type");
                     }
                 }
             }
